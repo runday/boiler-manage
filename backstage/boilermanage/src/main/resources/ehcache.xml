@@ -1,0 +1,9 @@
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="http://ehcache.org/ehcache.xsd">
+    <cache name="resourceList"
+           eternal="false"
+           maxEntriesLocalHeap="0"
+           timeToIdleSeconds="20"
+           diskExpiryThreadIntervalSeconds="30"
+           diskSpoolBufferSizeMB="1"/>
+</ehcache>

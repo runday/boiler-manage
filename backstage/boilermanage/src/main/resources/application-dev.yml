@@ -1,0 +1,25 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/test_sdcsoft_db?useUnicode=true&characterEncoding=utf8&useSSL=false
+    username: root
+    password: 123456
+    hikari:
+      ##配置资料：https://my.oschina.net/u/2300159/blog/1816537
+      ##控制池中连接的最大生存期,默认值：1800000（30分钟）
+      max-lifetime: 1800000
+      ##控制从池返回的连接的默认自动提交行为,默认值：true
+      auto-commit: true
+      ##此属性控制允许连接在池中闲置的最长时间。 此设置仅适用于minimumIdle定义为小于maximumPoolSize。
+      ##一旦池达到连接，空闲连接将不会退出minimumIdle。连接是否因闲置而退出，最大变化量为+30秒，平均变化量为+15秒。
+      ##在超时之前，连接永远不会退出。值为0意味着空闲连接永远不会从池中删除。允许的最小值是10000ms（10秒）。 默认值：600000（10分钟）
+      idle-timeout: 600000
+      ##此属性控制客户端（即您）将等待来自池的连接的最大毫秒数。如果在没有可用连接的情况下超过此时间，则会抛出SQLException。
+      ##最低可接受的连接超时时间为250 ms。 默认值：30000（30秒）
+      connection-timeout: 30000
+      ##此属性控制池允许达到的最大大小，包括空闲和正在使用的连接。基本上这个值将决定到数据库后端的最大实际连接数。
+      ##对此的合理价值最好由您的执行环境决定。当池达到此大小并且没有空闲连接可用时，对getConnection（）的调用将connectionTimeout在超时前阻塞达几毫秒。
+      ##请阅读关于游泳池尺寸。
+      maximum-pool-size: 20
+server:
+  port: 8090

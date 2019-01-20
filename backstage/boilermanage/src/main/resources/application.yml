@@ -1,0 +1,9 @@
+mybatis:
+  type-aliases-package: com.itdreamworks.boilermanage.entity
+spring:
+  profiles:
+    active: prod
+  cache:
+    type: ehcache
+    ehcache:
+      config: classpath:ehcache.xml
